@@ -555,6 +555,11 @@ h6 {
 .footer .footer-links ul a:hover {
   color: var(--accent-color);
 }
+.footer .footer-about a img {
+  max-height: 30px;
+  width: auto;
+  margin-right: 8px;
+}
 .footer .footer-about a {
   color: var(--heading-color);
   font-size: 28px;

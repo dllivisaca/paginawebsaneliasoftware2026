@@ -134,6 +134,12 @@
 
   .footer-about {
     a {
+      img {
+        max-height: 30px;
+        width: auto;
+        margin-right: 8px;
+      }
+
       color: var(--heading-color);
       font-size: 28px;
       font-weight: 600;
