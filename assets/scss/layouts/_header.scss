@@ -3,7 +3,7 @@
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #3d4d6a;
+  --background-color: #2A3F8F;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
@@ -73,5 +73,5 @@
 /* Index Page Header on Scroll
 ------------------------------*/
 .index-page.scrolled .header {
-  --background-color: rgba(40, 58, 90, 0.9);
+  --background-color: rgba(31, 63, 174, 0.92);
 }
