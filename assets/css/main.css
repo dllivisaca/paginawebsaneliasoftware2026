@@ -812,6 +812,11 @@ section,
 .hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
+.hero .hero-img img {
+  width: 98%;
+  display: block;
+  margin: 0 auto;
+}
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 28px;
