@@ -20,12 +20,33 @@
     }
 
     h1 {
-      font-size: 30px;
       margin: 0;
-      font-weight: 500;
+    }
+
+    .sitename {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
+      line-height: 1;
       color: var(--heading-color);
-      letter-spacing: 2px;
       text-transform: uppercase;
+    }
+
+    .brand-main {
+      font-family: "Arvo", serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--heading-color);
+    }
+
+    .brand-sub {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--heading-color);
     }
   }
 
