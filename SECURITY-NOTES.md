@@ -45,4 +45,46 @@
 - Sustituir datos de contacto, textos de newsletter, pricing, FAQ adicional y demas contenido de plantilla que todavia no representa el negocio real.
 
 ### Como retomar en una nueva sesion
-- Indicar: "Revisa `SECURITY-NOTES.md` y continuemos desde la sesión 2026-03-12".
+- Indicar: "Revisa `SECURITY-NOTES.md` y continuemos desde la sesion 2026-03-12".
+
+## Sesion 2026-03-16
+
+### Cambios realizados hoy
+- Se oculto temporalmente la seccion `#skills` en `index.html` sin eliminar su HTML.
+- Se reutilizo la seccion `#services` como bloque de `Funcionalidades clave`, actualizando titulo, descripcion, textos de cards e iconos, manteniendo el layout original.
+- Se reutilizo la seccion `#work-process` como flujo comercial de onboarding en 3 pasos, actualizando titulos, textos, bullets, `alt` y luego afinando el copy para no presentar `Sanelia` como nombre de la plataforma.
+- Se actualizaron las imagenes de `#work-process` para usar `steps-demo-3d.webp`, `steps-trial-3d.webp` y `steps-plan-3d.webp`.
+- Se reutilizo `#call-to-action` como llamada a solicitar una demo, reemplazando titulo, parrafo y texto del boton.
+- Se oculto temporalmente la seccion `#portfolio` solo desde la linea de apertura del `<section>`.
+- Se adapto la seccion `#team` para mostrar una sola card visible de `Daisy Llivisaca`, con copy de fundadora, LinkedIn real y las otras cards ocultas visualmente.
+- Se ajusto la presentacion de la card visible de `#team` para centrarla y mover el icono de LinkedIn primero junto al cargo y despues junto al nombre, manteniendo el resto de la estructura.
+- Se reconstruyo la seccion `#pricing` para dejar solo los planes `Basico` y `Profesional`, manteniendo `Profesional` como card destacada con badge `Mas popular`.
+- Se agrego un selector visual `Mensual / Anual` en `#pricing` con JavaScript vanilla minimo para alternar precios y sufijos.
+- Se restauro el peso visual de los precios en `#pricing` y se agrego un mensaje dinamico de ahorro visible solo en modo anual.
+- Se mejoro el badge de ahorro anual en `#pricing` con una presentacion mas promocional y una animacion local sutil.
+- Se adapto la seccion `#testimonials` para dejar 3 testimonios realistas alineados con Sanelia, manteniendo el slider existente.
+
+### Archivos creados
+- Ninguno.
+
+### Archivos modificados
+- `index.html`
+- `SECURITY-NOTES.md`
+
+### Archivos/recursos nuevos definidos o previstos
+- Se referenciaron en `index.html` los recursos `assets/img/steps/steps-demo-3d.webp`, `assets/img/steps/steps-trial-3d.webp` y `assets/img/steps/steps-plan-3d.webp` para la seccion `#work-process`.
+
+### Verificacion realizada
+- Se verifico cada cambio con inspeccion puntual de bloques HTML antes y despues de editar.
+- Se reviso repetidamente el `git diff` de `index.html` para confirmar que cada ajuste quedara acotado a la seccion solicitada en cada paso.
+- Se confirmo por inspeccion que `#pricing` mantiene el plan `Profesional` como destacado, el toggle funcional y el mensaje de ahorro visible solo en modo anual.
+- Se confirmo por inspeccion que `#testimonials` quedo reducido a 3 slides y conserva la estructura del carrusel.
+
+### Pendientes recomendados
+- Validar en navegador los textos con acentos, ya que en consola siguio apareciendo mojibake al inspeccionar algunas lineas.
+- Probar visualmente en responsive el bloque `#pricing`, sobre todo el toggle, el badge `Mas popular` y el mensaje de ahorro anual.
+- Revisar en navegador la nueva presentacion de `#team` y decidir si luego se reemplaza la imagen placeholder de la fundadora.
+- Completar la adaptacion de otras secciones que aun conserven copy placeholder, especialmente FAQ y cualquier bloque restante en ingles.
+
+### Como retomar en una nueva sesion
+- Indicar: "Revisa `SECURITY-NOTES.md` y continuemos desde la sesion 2026-03-16".
