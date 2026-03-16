@@ -686,6 +686,9 @@
             <button type="button" class="pricing-toggle-btn" data-period="yearly" style="border: 0; background: transparent; color: #495057; padding: 8px 18px; border-radius: 999px; font-weight: 600;">Anual</button>
           </div>
         </div>
+        <div id="pricing-savings-message" style="display: none; text-align: center; margin-top: -10px; margin-bottom: 26px; color: #5f3dc4; font-size: 14px; font-weight: 600;">
+          Ahorra casi 2 meses con el plan anual
+        </div>
       </div>
 
       <div class="container">
@@ -739,6 +742,7 @@
           var buttons = pricingSection.querySelectorAll('.pricing-toggle-btn');
           var values = pricingSection.querySelectorAll('.pricing-value');
           var periods = pricingSection.querySelectorAll('.pricing-period');
+          var savingsMessage = pricingSection.querySelector('#pricing-savings-message');
 
           buttons.forEach(function (button) {
             button.addEventListener('click', function () {
@@ -758,6 +762,10 @@
               periods.forEach(function (suffix) {
                 suffix.textContent = isMonthly ? ' / mes' : ' / año';
               });
+
+              if (savingsMessage) {
+                savingsMessage.style.display = isMonthly ? 'none' : 'block';
+              }
             });
           });
         });
