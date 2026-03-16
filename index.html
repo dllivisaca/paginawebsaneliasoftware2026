@@ -679,6 +679,15 @@
         <p>Soluciones prácticas para digitalizar tu atención, organizar tus citas y brindar una mejor experiencia a tus pacientes.</p>
       </div><!-- End Section Title -->
 
+      <div class="container" data-aos="fade-up">
+        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+          <div id="pricing-toggle" style="display: inline-flex; padding: 4px; border-radius: 999px; background: #f3f6fc; border: 1px solid #dbe4f3; gap: 4px;">
+            <button type="button" class="pricing-toggle-btn active" data-period="monthly" style="border: 0; background: linear-gradient(135deg, #0d6efd, #6f42c1); color: #fff; padding: 8px 18px; border-radius: 999px; font-weight: 600;">Mensual</button>
+            <button type="button" class="pricing-toggle-btn" data-period="yearly" style="border: 0; background: transparent; color: #495057; padding: 8px 18px; border-radius: 999px; font-weight: 600;">Anual</button>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
 
         <div class="row gy-4 justify-content-center">
@@ -686,7 +695,7 @@
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="pricing-item">
               <h3>Básico</h3>
-              <h4>US$ 24.99<span> / mes</span></h4>
+              <h4><span class="pricing-value" data-monthly="US$ 24.99" data-yearly="US$ 249.99">US$ 24.99</span><span class="pricing-period"> / mes</span></h4>
               <p>Ideal para empezar con una presencia profesional y recibir citas online.</p>
               <ul>
                 <li><i class="bi bi-check"></i> <span>Portal de citas 24/7 para pacientes</span></li>
@@ -703,7 +712,7 @@
             <div class="pricing-item featured" style="position: relative;">
               <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px; background: linear-gradient(135deg, #6f42c1, #0d6efd); color: #fff; font-size: 14px; font-weight: 600; box-shadow: 0 8px 18px rgba(13, 110, 253, 0.18); white-space: nowrap;">Más popular</div>
               <h3>Profesional</h3>
-              <h4>US$ 34.99<span> / mes</span></h4>
+              <h4><span class="pricing-value" data-monthly="US$ 34.99" data-yearly="US$ 349.99">US$ 34.99</span><span class="pricing-period"> / mes</span></h4>
               <p>Ideal para automatizar procesos y brindar una experiencia más completa a tus pacientes.</p>
               <ul>
                 <li><i class="bi bi-check"></i> <span>Todo lo del plan Básico</span></li>
@@ -721,6 +730,38 @@
         </div>
 
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var pricingSection = document.querySelector('#pricing');
+          if (!pricingSection) return;
+
+          var buttons = pricingSection.querySelectorAll('.pricing-toggle-btn');
+          var values = pricingSection.querySelectorAll('.pricing-value');
+          var periods = pricingSection.querySelectorAll('.pricing-period');
+
+          buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+              var period = button.getAttribute('data-period');
+              var isMonthly = period === 'monthly';
+
+              buttons.forEach(function (btn) {
+                var active = btn === button;
+                btn.style.background = active ? 'linear-gradient(135deg, #0d6efd, #6f42c1)' : 'transparent';
+                btn.style.color = active ? '#fff' : '#495057';
+              });
+
+              values.forEach(function (value) {
+                value.textContent = value.getAttribute(isMonthly ? 'data-monthly' : 'data-yearly');
+              });
+
+              periods.forEach(function (suffix) {
+                suffix.textContent = isMonthly ? ' / mes' : ' / año';
+              });
+            });
+          });
+        });
+      </script>
 
     </section><!-- /Pricing Section -->
 
