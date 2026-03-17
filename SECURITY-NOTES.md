@@ -88,3 +88,55 @@
 
 ### Como retomar en una nueva sesion
 - Indicar: "Revisa `SECURITY-NOTES.md` y continuemos desde la sesion 2026-03-16".
+
+## Sesion 2026-03-17
+
+### Cambios realizados hoy
+- Se ajustaron los precios visibles de la seccion `#pricing` en `index.html` para los planes `Basico` y `Profesional`, manteniendo intacta la logica del toggle mensual/anual.
+- Se agrego una leyenda visible `Todos los precios incluyen IVA.` dentro de la seccion `#pricing`.
+- Se reemplazo el contenido de la seccion `#faq-2` en `index.html` por preguntas y respuestas orientadas a Sanelia Software, luego se ajusto tambien la cabecera de la seccion a `Preguntas frecuentes`.
+- Se agrego un decimo item al final del bloque FAQ de `#faq-2` manteniendo la estructura del acordeon y el patron de `data-aos-delay`.
+- Se reutilizo la seccion `#subscribe` como CTA de contacto por WhatsApp, eliminando el formulario/input de newsletter y dejando un unico boton con `href="#"`.
+- Se reemplazo el estilo heredado del boton de `#subscribe` por un CTA independiente con estilo inline tipo pill en color magenta.
+- Se oculto la seccion `#recent-blog-postst` de `index.html` agregando `hidden` en la apertura del `<section>`, sin eliminar su HTML.
+- Se adapto la seccion `#contact` con datos reales de Sanelia Software, incluyendo titulo, descripcion, direccion, telefono placeholder, correo visible y mapa embebido apuntando a Guayaquil.
+- Se actualizo `forms/contact.php` para cambiar el correo destinatario del formulario a `daisyllivisaca@gmail.com`.
+- Se tradujeron al espanol los labels visibles y el boton submit del formulario de contacto en `index.html`.
+- Se oculto el bloque visual `footer-newsletter` del footer de `index.html` usando `hidden`, sin eliminarlo del codigo.
+- Se actualizaron los datos visibles del bloque de contacto del footer en `index.html` con direccion, telefono y correo reales de Sanelia.
+- Se inspeccionaron las paginas internas `service-details.html`, `portfolio-details.html` y `blog-details.html` para evaluar su reutilizacion como base de paginas internas corporativas.
+- Se creo `soluciones.html` a partir de `service-details.html`, reemplazando el contenido principal demo por contenido real de Sanelia Software orientado a una pagina de soluciones.
+- Se reemplazaron el `header` y el `footer` de `soluciones.html` para alinearlos visualmente con `index.html`, ajustando los enlaces del header para que funcionen correctamente desde una pagina interna.
+- Se actualizo el `head` de `soluciones.html` para cargar tambien la fuente `Arvo`, dejando el branding textual del logo consistente con `index.html`.
+- Se agrego un bloque `<style>` local en `soluciones.html` para compensar el `fixed-top` del header y despues se ajusto el breadcrumb del `page-title` con icono de casa, subrayado del item actual y mas espacio superior.
+- Se corrigio el copy de dos parrafos del contenido principal de `soluciones.html` para que `Sanelia Software` quede claro como empresa y no como nombre del producto.
+
+### Archivos creados
+- `soluciones.html`
+
+### Archivos modificados
+- `index.html`
+- `forms/contact.php`
+- `soluciones.html`
+- `SECURITY-NOTES.md`
+
+### Archivos/recursos nuevos definidos o previstos
+- `soluciones.html` quedo definido como nueva pagina interna basada en `service-details.html`.
+- Se mantuvo temporalmente en `soluciones.html` la imagen `assets/img/services/services-4.webp` como recurso provisional del bloque principal.
+
+### Verificacion realizada
+- Se verificaron por inspeccion puntual las lineas exactas modificadas en `index.html`, `forms/contact.php` y `soluciones.html` despues de cada cambio.
+- Se confirmo repetidamente que los cambios quedaran acotados a la seccion solicitada en cada paso, especialmente en `#pricing`, `#faq-2`, `#subscribe`, `#contact` y footer.
+- Se confirmo por inspeccion que el formulario de contacto sigue apuntando a `forms/contact.php`.
+- Se confirmo por inspeccion que `soluciones.html` conserva su `<main>` intacto mientras se reemplazaron solo `header`, `footer`, fuentes y ajustes locales de espaciado/breadcrumb.
+- Se comprobo que `soluciones.html` ya carga `Arvo` para `.brand-main` y mantiene `Poppins` para `.brand-sub`.
+
+### Pendientes recomendados
+- Validar en navegador `soluciones.html` para confirmar que el `page-title` ya no queda tapado por el `header fixed-top`.
+- Revisar visualmente en navegador la consistencia final del branding del header y footer entre `index.html` y `soluciones.html`.
+- Definir una imagen final para `soluciones.html` que reemplace el recurso temporal `assets/img/services/services-4.webp`.
+- Si mas adelante se enlaza `soluciones.html` desde el menu de `index.html`, actualizar esos enlaces de navegacion de forma consistente en todas las paginas internas.
+- Verificar en entorno real/XAMPP si el envio de correo de `forms/contact.php` requiere configuracion adicional de `mail()` o SMTP.
+
+### Como retomar en una nueva sesion
+- Indicar: "Revisa `SECURITY-NOTES.md` y continuemos desde la sesion 2026-03-17".
