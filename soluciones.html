@@ -98,49 +98,306 @@
     <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
 
+      <style>
+        #service-details {
+          background:
+            radial-gradient(circle at top left, rgba(13, 110, 253, 0.08), transparent 32%),
+            linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+        }
+
+        #service-details .solutions-shell {
+          display: grid;
+          gap: 2rem;
+        }
+
+        #service-details .solutions-hero {
+          background: #ffffff;
+          border: 1px solid rgba(13, 110, 253, 0.08);
+          border-radius: 28px;
+          box-shadow: 0 24px 60px rgba(20, 40, 90, 0.08);
+          overflow: hidden;
+        }
+
+        #service-details .solutions-copy {
+          padding: 2.75rem;
+        }
+
+        #service-details .solutions-kicker {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 0.9rem;
+          border-radius: 999px;
+          background: rgba(13, 110, 253, 0.08);
+          color: #0d4ea6;
+          font-size: 0.92rem;
+          font-weight: 600;
+          margin-bottom: 1.25rem;
+        }
+
+        #service-details .solutions-copy h2 {
+          font-size: clamp(2rem, 2.8vw, 3rem);
+          line-height: 1.12;
+          margin-bottom: 1rem;
+          color: #1b2a4a;
+        }
+
+        #service-details .solutions-copy p {
+          color: #53627c;
+          font-size: 1.02rem;
+          line-height: 1.75;
+          margin-bottom: 0;
+        }
+
+        #service-details .solutions-highlight {
+          margin-top: 1.5rem;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.9rem;
+        }
+
+        #service-details .solutions-highlight-item {
+          background: #f7faff;
+          border: 1px solid rgba(13, 110, 253, 0.08);
+          border-radius: 18px;
+          padding: 1rem 1.1rem;
+          color: #1f355d;
+          font-weight: 500;
+        }
+
+        #service-details .solutions-media {
+          height: 100%;
+          min-height: 100%;
+          padding: 1rem;
+          display: flex;
+          align-items: stretch;
+        }
+
+        #service-details .solutions-media-frame {
+          position: relative;
+          width: 100%;
+          min-height: 420px;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+        }
+
+        #service-details .solutions-media-frame::after {
+          content: "";
+          position: absolute;
+          inset: auto 1.25rem 1.25rem 1.25rem;
+          height: 96px;
+          border-radius: 18px;
+          background: linear-gradient(180deg, rgba(7, 18, 43, 0), rgba(7, 18, 43, 0.72));
+        }
+
+        #service-details .solutions-media img {
+          width: 100%;
+          height: 100%;
+          min-height: 420px;
+          object-fit: cover;
+          display: block;
+        }
+
+        #service-details .solutions-cards {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 1rem;
+        }
+
+        #service-details .solution-card {
+          height: 100%;
+          background: #ffffff;
+          border: 1px solid rgba(20, 40, 90, 0.08);
+          border-radius: 22px;
+          padding: 1.4rem 1.3rem;
+          box-shadow: 0 16px 36px rgba(18, 38, 85, 0.06);
+          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        #service-details .solution-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 42px rgba(18, 38, 85, 0.1);
+          border-color: rgba(13, 110, 253, 0.2);
+        }
+
+        #service-details .solution-icon {
+          width: 54px;
+          height: 54px;
+          border-radius: 16px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #0d6efd, #5b8cff);
+          color: #ffffff;
+          font-size: 1.45rem;
+          margin-bottom: 1rem;
+        }
+
+        #service-details .solution-card h3 {
+          font-size: 1.08rem;
+          color: #1b2a4a;
+          margin-bottom: 0.65rem;
+        }
+
+        #service-details .solution-card p {
+          margin-bottom: 0;
+          color: #5b6982;
+          line-height: 1.65;
+          font-size: 0.96rem;
+        }
+
+        #service-details .solutions-cta {
+          background: linear-gradient(135deg, #123466 0%, #0d6efd 100%);
+          color: #ffffff;
+          border-radius: 28px;
+          padding: 2rem 2.2rem;
+          box-shadow: 0 22px 46px rgba(13, 72, 160, 0.22);
+        }
+
+        #service-details .solutions-cta h3 {
+          color: #ffffff;
+          margin-bottom: 0.6rem;
+          font-size: clamp(1.45rem, 2vw, 2rem);
+        }
+
+        #service-details .solutions-cta p {
+          margin-bottom: 0;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.75;
+          font-size: 1rem;
+        }
+
+        @media (max-width: 1199.98px) {
+          #service-details .solutions-cards {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 991.98px) {
+          #service-details .solutions-copy {
+            padding: 2rem;
+          }
+
+          #service-details .solutions-media {
+            padding: 0 1rem 1rem;
+          }
+
+          #service-details .solutions-media-frame,
+          #service-details .solutions-media img {
+            min-height: 340px;
+          }
+
+          #service-details .solutions-cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 767.98px) {
+          #service-details .solutions-shell {
+            gap: 1.5rem;
+          }
+
+          #service-details .solutions-copy {
+            padding: 1.5rem;
+          }
+
+          #service-details .solutions-copy h2 {
+            font-size: 1.85rem;
+          }
+
+          #service-details .solutions-highlight {
+            grid-template-columns: 1fr;
+          }
+
+          #service-details .solutions-media {
+            padding: 0 1rem 1rem;
+          }
+
+          #service-details .solutions-media-frame,
+          #service-details .solutions-media img {
+            min-height: 260px;
+          }
+
+          #service-details .solutions-cards {
+            grid-template-columns: 1fr;
+          }
+
+          #service-details .solutions-cta {
+            padding: 1.5rem;
+          }
+        }
+      </style>
+
       <div class="container">
+        <div class="solutions-shell">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="services-list">
-              <a href="javascript:void(0);" class="active">Agendamiento en línea para pacientes</a>
-              <a href="javascript:void(0);">Gestión de horarios y servicios médicos</a>
-              <a href="javascript:void(0);">Recordatorios automáticos por correo</a>
-              <a href="javascript:void(0);">Organización administrativa del consultorio</a>
-              <a href="javascript:void(0);">Experiencia profesional para la atención de pacientes</a>
+          <div class="solutions-hero" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-6 order-1">
+                <div class="solutions-copy">
+                  <div class="solutions-kicker">
+                    <i class="bi bi-hospital"></i>
+                    <span>Solución especializada en salud</span>
+                  </div>
+                  <h2>Más orden, mejor visibilidad y una agenda médica centralizada</h2>
+                  <p>
+                    Sanelia ayuda a consultorios, centros médicos y profesionales de la salud a gestionar citas, horarios y servicios desde una sola plataforma web, con una operación más clara y recordatorios por correo que acompañan el día a día.
+                  </p>
+                  <div class="solutions-highlight">
+                    <div class="solutions-highlight-item">Agendamiento en línea para pacientes</div>
+                    <div class="solutions-highlight-item">Organización administrativa más simple</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 order-2">
+                <div class="solutions-media">
+                  <div class="solutions-media-frame">
+                    <img src="assets/img/services/services-4.webp" alt="Plataforma web de agendamiento y gestión para centros médicos y consultorios" class="img-fluid">
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <h4>Soluciones pensadas para una operación médica más ordenada</h4>
-            <p>Una plataforma pensada para consultorios, centros médicos y profesionales de la salud que necesitan organizar sus citas, reducir tareas manuales y mantener una gestión más clara y eficiente desde distintos dispositivos.</p>
           </div>
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services/services-4.webp" alt="Solución de agendamiento y gestión para centros médicos y consultorios" class="img-fluid services-img">
-            <h3>Una solución web práctica y profesional para centros médicos y consultorios</h3>
-            <p>
-              La plataforma permite centralizar el agendamiento en una sola herramienta, facilitando la gestión de citas, horarios, servicios y la organización administrativa de consultorios y centros médicos.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Reservas en línea para facilitar la programación de citas</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Panel administrativo para gestionar horarios, disponibilidad y servicios</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Recordatorios y notificaciones por correo electrónico</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Organización centralizada de la operación administrativa</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Plataforma web accesible desde distintos dispositivos</span></li>
-            </ul>
-            <p>
-              La solución está diseñada para simplificar la operación diaria, ahorrar tiempo en tareas repetitivas y mejorar el control de la agenda y de los procesos administrativos sin depender de gestiones manuales.
-            </p>
-            <p>
-              Ya sea para iniciar una operación más organizada o para fortalecer la digitalización de tu atención, esta herramienta ofrece una base confiable para adaptarse al ritmo de trabajo de un consultorio o centro médico.
-            </p>
-            <p>
-              <strong>¿Quieres conocer cómo esta solución puede adaptarse a tu consultorio o centro médico? Escríbenos y solicita una demostración.</strong>
-            </p>
+          <div class="solutions-cards" data-aos="fade-up" data-aos-delay="150">
+            <div class="solution-card">
+              <div class="solution-icon"><i class="bi bi-calendar-check"></i></div>
+              <h3>Agendamiento en línea</h3>
+              <p>Facilita la reserva de citas con una experiencia clara y profesional para pacientes.</p>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-icon"><i class="bi bi-clock-history"></i></div>
+              <h3>Gestión de horarios</h3>
+              <p>Organiza disponibilidad, bloques de atención y servicios en un solo entorno de trabajo.</p>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-icon"><i class="bi bi-envelope-check"></i></div>
+              <h3>Recordatorios por correo</h3>
+              <p>Envía confirmaciones, notificaciones y recordatorios por correo electrónico de forma ordenada.</p>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-icon"><i class="bi bi-clipboard-data"></i></div>
+              <h3>Control administrativo</h3>
+              <p>Centraliza tareas operativas para mantener una gestión más ágil y menos dependiente de procesos manuales.</p>
+            </div>
+
+            <div class="solution-card">
+              <div class="solution-icon"><i class="bi bi-laptop"></i></div>
+              <h3>Acceso web flexible</h3>
+              <p>Trabaja desde distintos dispositivos con una plataforma web pensada para acompañar la operación diaria.</p>
+            </div>
+          </div>
+
+          <div class="solutions-cta" data-aos="fade-up" data-aos-delay="200">
+            <h3>Una base sólida para modernizar la atención sin complicar la operación</h3>
+            <p>Si quieres conocer cómo Sanelia puede adaptarse a tu consultorio o centro médico, podemos mostrarte una demostración enfocada en tu forma de trabajo.</p>
           </div>
 
         </div>
-
       </div>
 
     </section><!-- /Service Details Section -->
